@@ -207,7 +207,7 @@ function S1() {
   }
 }
 
-function call_locker() {
+function human_verification() {
   // Show the loader
   // document.getElementById("iframe-overlay").innerHTML =
   //   '<iframe id="lockeriframe" src="https://verifyhere.xyz/cl/i/5k8dm1" frameborder="0" class="second-row"></iframe>';
